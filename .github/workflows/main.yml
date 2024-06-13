@@ -53,7 +53,7 @@ jobs:
       env:
         ELECTRON: true
         APP_VERSION_NUMBER: 0.5.9
-      run: set
+      run: dir env:
     - name: Build on Windows
       env:
         ELECTRON: true
