@@ -22,14 +22,17 @@ jobs:
   build_on_win:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@master
+    - name: Check out Git repository
+      uses: actions/checkout@v3      
+
+    - name: Install Node.js, NPM and Yarn
+      uses: actions/setup-node@v3
       with:
-        ref: feature/github-actions        
-    - uses: actions/setup-node@master
-      with:
+        #node-version: 16
         node-version: 10.16
+
     - name: see directory
-      run: ls
+      run: dir
     #- name: Build/release Electron app
     #  uses: motrixapp/action-electron-builder@v2
     #  with:
