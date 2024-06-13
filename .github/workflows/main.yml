@@ -66,18 +66,18 @@ jobs:
       env:
         ELECTRON: true
         APP_VERSION_NUMBER: 0.5.9
-      run: yarn build
+      run: yarn build build-full.json
     - name: Build Electron
       env:
         ELECTRON: true
         APP_VERSION_NUMBER: 0.5.9
       run: yarn electron:buildWin
-    - name: see directory
-      run: ls ./electron_dist/squirrel-windows
-    - uses: lucyio/upload-to-release@master
-      with:
-        name: lucyio/electron
-        path: ./electron_dist/squirrel-windows
-        action: unpublished
-        release_id: 0.5.9
+    - name: see dist directory
+      run: dir /s electron_dist
+    #- uses: lucyio/upload-to-release@master
+    #  with:
+    #    name: lucyio/electron
+    #    path: ./electron_dist/squirrel-windows
+    #    action: unpublished
+    #    release_id: 0.5.9
         release-repo: lucyio/electron
