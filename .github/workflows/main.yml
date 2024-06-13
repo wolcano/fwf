@@ -71,7 +71,7 @@ jobs:
       env:
         ELECTRON: true
         APP_VERSION_NUMBER: 0.5.9
-      run: yarn electron:buildWin
+      run: yarn "electron:buildWin"
     - name: see dist directory
       run: dir /s electron_dist
     #- uses: lucyio/upload-to-release@master
@@ -80,4 +80,4 @@ jobs:
     #    path: ./electron_dist/squirrel-windows
     #    action: unpublished
     #    release_id: 0.5.9
-        release-repo: lucyio/electron
+    #    release-repo: lucyio/electron
