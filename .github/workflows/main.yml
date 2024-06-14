@@ -28,8 +28,8 @@ jobs:
     - name: Install Node.js, NPM and Yarn
       uses: actions/setup-node@v3
       with:
-        #node-version: 16
-        node-version: 10.16
+        node-version: 16
+        #node-version: 10.16
 
     - name: see directory
       run: dir
@@ -38,12 +38,12 @@ jobs:
     #  with:
     #    build_script_name: 'build:github'
 
-    #- name: Compile Electron App
-    #  uses: x6Pnda/action-electron-compiler@v1
-    #  with:
-    #      # Package manager. NPM, PNPM and Yarn supported. Install Yarn and PNPM yourself. Default is NPM
-    #      # (Optional)
-    #      package_manager: NPM
+    - name: Compile Electron App
+      uses: x6Pnda/action-electron-compiler@v1
+      with:
+          # Package manager. NPM, PNPM and Yarn supported. Install Yarn and PNPM yourself. Default is NPM
+          # (Optional)
+          package_manager: NPM
 
     - name: install node tools
       run: npm install --global --production windows-build-tools@4.0.0
@@ -62,11 +62,11 @@ jobs:
         ELECTRON: true
         APP_VERSION_NUMBER: 0.5.9
       run: dir "env:"
-    - name: Build on Windows
-      env:
-        ELECTRON: true
-        APP_VERSION_NUMBER: 0.5.9
-      run: yarn build build-full.json
+   # - name: Build on Windows
+   #   env:
+   #     ELECTRON: true
+   #     APP_VERSION_NUMBER: 0.5.9
+   #   run: yarn build build-full.json
     - name: Build Electron
       env:
         ELECTRON: true
