@@ -33,17 +33,10 @@ jobs:
 
     - name: see directory
       run: dir
-    #- name: Build/release Electron app
-    #  uses: motrixapp/action-electron-builder@v2
-    #  with:
-    #    build_script_name: 'build:github'
-
-    - name: Compile Electron App
-      uses: x6Pnda/action-electron-compiler@v1
+    - name: Build/release Electron app
+      uses: motrixapp/action-electron-builder@v2
       with:
-          # Package manager. NPM, PNPM and Yarn supported. Install Yarn and PNPM yourself. Default is NPM
-          # (Optional)
-          package_manager: NPM
+        build_script_name: 'build:github'
 
     - name: install node tools
       run: npm install --global --production windows-build-tools@4.0.0
@@ -71,7 +64,9 @@ jobs:
       env:
         ELECTRON: true
         APP_VERSION_NUMBER: 0.5.9
-      run: yarn "electron:buildWin"
+      run: 
+        #node .electron-vue/build.js
+        electron-builder
     - name: see dist directory
       run: dir /s electron_dist
     #- uses: lucyio/upload-to-release@master
