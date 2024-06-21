@@ -33,10 +33,11 @@ jobs:
 
     - name: see directory
       run: dir
-    - name: Build/release Electron app
-      uses: motrixapp/action-electron-builder@v2
-      with:
-        build_script_name: 'build:github'
+
+    #- name: Build/release Electron app
+    #  uses: motrixapp/action-electron-builder@v2
+    #  with:
+    #    build_script_name: 'build:github'
 
     - name: install node tools
       run: npm install --global --production windows-build-tools@4.0.0
