@@ -51,6 +51,10 @@ jobs:
     #  run: set path=%path%;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin
     - name: Install dependencies
       run: yarn install
+
+    - name: install yarn electron?
+      run: yarn add electron-builder --dev
+
     - name: check env
       env:
         ELECTRON: true
