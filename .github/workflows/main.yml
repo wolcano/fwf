@@ -53,7 +53,8 @@ jobs:
       run: yarn install
 
     - name: install yarn electron?
-      run: yarn add electron-builder --dev
+      #run: yarn add electron-builder --dev
+      run: yarn add electron-builder
 
     - name: check env
       env:
